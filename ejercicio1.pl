@@ -18,3 +18,6 @@ suma(X, Z, Suma):-
     conexion(X, Y, Costo1),
     conexion(Y, Z, Costo2),
     Suma is Costo1 + Costo2.
+
+lleva_a(A, B):- conexion(A, B, _).
+lleva_a(A, B):- (conexion(A, _, _), conexion(_, B, _)), conexion(A, X, _), lleva_a(X, B).
