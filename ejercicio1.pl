@@ -13,3 +13,8 @@ existe_conexion(A, B):- conexion(A, B, _); conexion(B, A, _).
 tiene_aristas(X):-
     (conexion(X, Y, _); conexion(Y, X, _)), 
     X \== Y.
+
+suma(X, Z, Suma):-
+    conexion(X, Y, Costo1),
+    conexion(Y, Z, Costo2),
+    Suma is Costo1 + Costo2.
